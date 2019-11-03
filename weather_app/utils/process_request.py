@@ -11,10 +11,11 @@ def get(url):
     logger.info('--> start of process_request.get()')
     logger.info('loading url')
     resp = requests.get(url)
+    if resp.status_code in [200, 404]:
+        logger.info('Successfully loaded URL')
+        logger.info('<-- end of process_request.get()')
+        return resp
     resp.raise_for_status()
-    logger.info('Successfully loaded URL')
-    logger.info('<-- end of process_request.get()')
-    return resp
 
 
 def get_json(url):
