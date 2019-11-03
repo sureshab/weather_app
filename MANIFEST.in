@@ -1,0 +1,4 @@
+recursive-include weather_app/templates *
+recursive-include weather_app/static *
+recursive-include weather_app/utils *
+recursive-include weather_app/models *
